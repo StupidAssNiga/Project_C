@@ -9,7 +9,7 @@ class Personal : public Employee, public IWorkBaseTime
 protected:
     double hourlyRate;
 public:
-    Personal(int id, const std::string& name, double rate);
+    Personal(int id, const string& name, double rate);
     double getHourlyRate() const { return hourlyRate; }
 
     virtual double calcBase() const override;

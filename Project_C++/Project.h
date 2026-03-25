@@ -3,8 +3,15 @@
 #include <string>
 using namespace std;
 
-struct Project {
+
+class Project 
+{
+private:
     string name;
     double budget;
-    Project(const string& name, double budget) : name(name), budget(budget) {}
+public:
+    Project(const string& name, double budget);
+    string getName() const;
+    double getBudget() const;
+    void setBudget(double newBudget);
 };

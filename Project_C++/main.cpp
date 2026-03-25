@@ -147,9 +147,15 @@ int main()
         }
     } while (choice != 0);
 
-    for (auto emp : staff) delete emp;
-    for (auto proj : projects) delete proj;
+    for (auto emp : staff)
+    {
+        delete emp;
+    }
 
-    return 0;
+    for (auto proj : projects)
+    {
+        delete proj;
+    }
+
 }
 

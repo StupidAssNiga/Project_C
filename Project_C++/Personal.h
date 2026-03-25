@@ -6,32 +6,14 @@ using namespace std;
 
 class Personal : public Employee, public IWorkBaseTime 
 {
+protected:
+    double hourlyRate;
 public:
-    Personal(int id, const string& name, double rate, Project* proj = nullptr);
-    virtual ~Personal() {}
+    Personal(int id, const std::string& name, double rate);
+    double getHourlyRate() const { return hourlyRate; }
 
     virtual double calcBase() const override;
     virtual double calcBonus() const override;
-
     virtual void calc() override;
-    virtual string getPosition() const override;
-};
-
-class Cleaner : public Personal 
-{
-public:
-    Cleaner(int id, const string& name, double rate, Project* proj = nullptr);
-    virtual string getPosition() const override;
-};
-
-class Driver : public Personal
-{
-private:
-    double nightHours;
-    double nightRate;
-public:
-    Driver(int id, const string& name, double rate, Project* proj = nullptr);
-    void setNightHours(double hours);
-    virtual double calcBonus() const override;
-    virtual string getPosition() const override;
+    virtual void printInfo() const override;
 };

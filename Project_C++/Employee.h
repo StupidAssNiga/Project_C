@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 #include <iostream>
+#include <string>
 #include <vector>
 #include "Project.h"
 using namespace std;
@@ -12,23 +13,16 @@ protected:
     string name;
     double worktime;
     double payment;
-    double rate;
-    Project* project;
+
 public:
-    Employee(int id, const string& name, double rate, Project* proj = nullptr);
+    Employee(int id, const string& name);
     virtual ~Employee() {}
-
+    void setWorkTime(double time) { worktime = time; }
     virtual void calc() = 0;
-    virtual void printInfo() const;
+    virtual void printInfo() const = 0;
 
-    void setWorkTime(double hours);
-    void setProject(Project* proj);
-
-    int getId() const;
-    string getName() const;
-    double getPayment() const;
-    string getPosition() const;
-    Project* getProject() const;
-
-    virtual string toFileString() const;
+    int getId() const { return id; }
+    string getName() const { return name; }
+    double getPayment() const { return payment; }
+    double getWorkTime() const { return worktime; }
 };

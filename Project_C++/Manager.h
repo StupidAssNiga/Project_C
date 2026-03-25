@@ -4,7 +4,8 @@
 #include <vector>
 using namespace std;
 
-class ProjectManager : public Employee, public IProjectBudget, public IHeading {
+class ProjectManager : public Employee, public IProjectBudget, public IHeading
+{
 private:
     int subordinates;
 public:
@@ -20,7 +21,8 @@ public:
     virtual string getPosition() const override;
 };
 
-class SeniorManager : public ProjectManager {
+class SeniorManager : public ProjectManager
+{
 private:
     vector<Project*> allProjects;
 public:

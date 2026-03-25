@@ -4,7 +4,8 @@
 #include "Interfaces.h"
 using namespace std;
 
-class Engineer : public Personal, public IProjectBudget {
+class Engineer : public Personal, public IProjectBudget
+{
 public:
     Engineer(int id, const string& name, double rate, Project* proj);
     virtual ~Engineer() {}
@@ -16,7 +17,8 @@ public:
     virtual string getPosition() const override;
 };
 
-class Programmer : public Engineer {
+class Programmer : public Engineer 
+{
 private:
     double earlyBonus;
 public:
@@ -26,7 +28,8 @@ public:
     virtual string getPosition() const override;
 };
 
-class Tester : public Engineer {
+class Tester : public Engineer 
+{
 private:
     int foundBugs;
     double bonusPerBug;
@@ -37,7 +40,8 @@ public:
     virtual string getPosition() const override;
 };
 
-class TeamLeader : public Programmer, public IHeading {
+class TeamLeader : public Programmer, public IHeading
+{
 private:
     int subordinates;
 public:
